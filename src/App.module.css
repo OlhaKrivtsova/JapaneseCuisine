@@ -1,0 +1,6 @@
+.main {
+  padding: 7rem;
+  height: 100vh;
+  background-image: url('./assets/sushi.webp');
+  background-size: cover;
+}
