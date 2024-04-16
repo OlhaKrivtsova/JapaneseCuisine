@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/JapaneseCuisine/static/css/main.5711d69e.css",
-    "main.js": "/JapaneseCuisine/static/js/main.4c06c3dc.js",
+    "main.css": "/JapaneseCuisine/static/css/main.7c664c0a.css",
+    "main.js": "/JapaneseCuisine/static/js/main.fe889adb.js",
     "static/media/sushi.webp": "/JapaneseCuisine/static/media/sushi.9ba21fb230c98989c10f.webp",
     "index.html": "/JapaneseCuisine/index.html",
-    "main.5711d69e.css.map": "/JapaneseCuisine/static/css/main.5711d69e.css.map",
-    "main.4c06c3dc.js.map": "/JapaneseCuisine/static/js/main.4c06c3dc.js.map"
+    "main.7c664c0a.css.map": "/JapaneseCuisine/static/css/main.7c664c0a.css.map",
+    "main.fe889adb.js.map": "/JapaneseCuisine/static/js/main.fe889adb.js.map"
   },
   "entrypoints": [
-    "static/css/main.5711d69e.css",
-    "static/js/main.4c06c3dc.js"
+    "static/css/main.7c664c0a.css",
+    "static/js/main.fe889adb.js"
   ]
 }
