@@ -1,19 +1,19 @@
 .form {
-  margin: 1rem 0;
-  height: 15rem;
+  /* margin: 1rem 0; */
+  min-height: 13rem;
   overflow: auto;
 }
 
 .control {
-  margin-bottom: 0.5rem;
-}
-
-.control label {
-  margin-bottom: 0.3rem;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 6px;
 }
 
 .control input {
+  padding-left: 7px;
+  height: 2rem;
   font: inherit;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -22,19 +22,21 @@
 }
 
 .actions {
+  margin-top: 10px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 2rem;
 }
 
 .actions button {
+  width: 100px;
   font: inherit;
   color: #066341;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid #066341;
   border-radius: 25px;
-  padding: 0.5rem 2rem;
+  padding: 0.3rem 1rem;
 }
 
 .actions button:hover,
@@ -65,5 +67,7 @@
 }
 
 .text-error {
+  margin: 0 0;
   color: red;
+  font-size: 0.8em;
 }

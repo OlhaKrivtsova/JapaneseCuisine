@@ -2,45 +2,42 @@ import {useRef, useState} from 'react';
 import styles from './SubmitOrder.module.css';
 
 const validationValue = val => {
-  // console.log(val);
   return val.trim() !== '';
 };
 
 const SubmitOrder = props => {
   const [formValidity, setFormValidity] = useState({
     name: true,
-    address: true,
+    email: true,
     phone: true,
   });
 
   const nameRef = useRef(null);
-  // console.log(nameRef.current.value);
-  const addressRef = useRef(null);
+  const emailRef = useRef(null);
   const phoneRef = useRef(null);
 
   const submitHandler = event => {
     event.preventDefault();
 
     const name = nameRef.current.value;
-    const address = addressRef.current.value;
+    const email = emailRef.current.value;
     const phone = phoneRef.current.value;
 
     const isNameValid = validationValue(name);
-    const isAddressValid = validationValue(address);
+    const isEmailValid = validationValue(email);
     const isPhoneValid = validationValue(phone);
 
     setFormValidity({
       name: isNameValid,
-      address: isAddressValid,
+      email: isEmailValid,
       phone: isPhoneValid,
     });
 
-    const isFormValid = isNameValid && isAddressValid && isPhoneValid;
+    const isFormValid = isNameValid && isEmailValid && isPhoneValid;
 
     if (!isFormValid) return;
 
-    console.log(name, address, phone);
-    props.onSubmit({name, address, phone});
+    props.onSubmit({name, email, phone});
   };
 
   return (
@@ -53,18 +50,18 @@ const SubmitOrder = props => {
         <label htmlFor='name'>Name</label>
         <input type='text' id='name' ref={nameRef} />
         {!formValidity.name && (
-          <p className={styles['text-error']}>enter you name</p>
+          <p className={styles['text-error']}>enter your name</p>
         )}
       </div>
       <div
         className={`${styles.control} ${
-          !formValidity.address ? styles.invalid : ''
+          !formValidity.email ? styles.invalid : ''
         }`}
       >
-        <label htmlFor='address'>Address</label>
-        <input type='text' id='address' ref={addressRef} />
-        {!formValidity.address && (
-          <p className={styles['text-error']}>enter you address</p>
+        <label htmlFor='email'>Email</label>
+        <input type='email' id='email' ref={emailRef} />
+        {!formValidity.email && (
+          <p className={styles['text-error']}>enter your email</p>
         )}
       </div>
       <div
@@ -75,14 +72,14 @@ const SubmitOrder = props => {
         <label htmlFor='phone'>Phone</label>
         <input type='text' id='phone' ref={phoneRef} />
         {!formValidity.phone && (
-          <p className={styles['text-error']}>enter you phone number</p>
+          <p className={styles['text-error']}>enter your phone number</p>
         )}
       </div>
       <div className={styles.actions}>
-        <button className={styles.submit}>Submit</button>
         <button type='button' onClick={props.onCloseCart}>
           Reset
         </button>
+        <button className={styles.submit}>Submit</button>
       </div>
     </form>
   );
